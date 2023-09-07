@@ -27,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $target_dir = "uploads/"; // Directory where you want to store uploaded files
         $target_file = $target_dir . basename($profile_picture);
 
-        // Check if the file is an image
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
         if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
             echo "Only JPG, JPEG, PNG, and GIF files are allowed.";
@@ -38,9 +37,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $db_host = "localhost";
                 $db_user = "root";
                 $db_password = "";
-                $db_name = "register";
+                $db_name = "Userdb";
 
-                $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
+                $conn = new mysqli($localhost, $root," ", $Userdb);
 
                 // Check for database connection errors
                 if ($conn->connect_error) {
@@ -48,9 +47,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
 
                 // Insert user data into the database (you should use prepared statements for security)
-                $sql = "INSERT INTO users (first_name, last_name, password, gender, email, phone, address, profile_picture) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                $sql = "INSERT INTO user (first_name, last_name, password,confirm_password, gender, email, phone, address, profile_picture) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param("ssssssss", $first_name, $last_name, $hashed_password, $gender, $email, $phone, $address, $target_file);
+                $stmt->bind_param("ssssssisb", $first_name, $last_name, $password, $hashed_password, $gender, $email, $phone, $address, $target_file);
 
                 if ($stmt->execute()) {
                     echo "Registration successful!";
