@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: lightgreen;
+}
+
+.logo {
+    float: center;
+    height: 230px;
+    width: auto;
+    margin: 5px 0px 0px 105px;
+    cursor: pointer;
+    background-position: center;
+}
+
+.thenav {
+    position: relative;
+}
+
+.topnav {
+    overflow: hidden;
+}
+
+.topnav-right {
+    float: right;
+    margin-top: 70px;
+    margin-right: 100px;
+    padding-bottom: 100px;
+    padding: 3px;
+}
+
+.topnav-right a {
+    text-decoration: none;
+    margin-right: 7px;
+    color: brown;
+}
+
+#login-button {
+    display: inline-flex;
+    padding: 3px 5px;
+    background-color: navy;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#login-button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.frame {
+    height: 350px;
+    width: 500px;
+    margin-left: 50px;
+    display: flex;
+    float: right;
+    margin-right: 100px;
+}
+
+.getinvolved {
+    margin-top: 0px;
+    padding-left: 110px;
+    padding-right: 110px;
+}
+
+.btn-getinvolved,
+.btn-joinus,
+.btn-explore {
+    background-color: #15194b;
+    color: white;
+}
+
+.btn-getinvolved:hover {
+    background-color: orangered;
+    color: white;
+}
+
+.btn-explore:hover {
+    background-color: orangered;
+    color: white;
+}
+
+.btn-joinus:hover {
+    background-color: orangered;
+    color: white;
+}
+
+.sponsors {
+    margin-top: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.miss_ion {
+    padding-top: 50px;
+    padding-bottom: 500px;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.miss_ion p {
+    padding-left: 110px;
+    padding-right: 110px;
+}
+
+.sponsors {
+    margin-left: -5px;
+    margin-right: -5px;
+    font-size: 18px;
+}
+
+.btn-back {
+    border: 1px solid #eee;
+    color: black;
+    background-color: silver;
+    text-decoration: none;
+    outline: none;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+    /* Adjust styles for screens with a maximum width of 768px */
+    .logo {
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 30px;
+    }
+
+    .topnav-right {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .frame {
+        margin-left: 20px;
+        margin-right: 20px;
+        display: inline-flex;
+        float: center;
+    }
+
+    .getinvolved {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .sponsors {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
