@@ -116,10 +116,11 @@ body {
 
 .btn-back {
     border: 1px solid #eee;
-    color: black;
-    background-color: silver;
+    color: #fff;
+    background-color: #15194b;
     text-decoration: none;
     outline: none;
+    float: right;
 }
 
 /* Media Queries */
@@ -153,4 +154,5 @@ body {
         margin-left: 20px;
         margin-right: 20px;
     }
+
 }

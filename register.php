@@ -39,7 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $db_password = "";
                 $db_name = "Userdb";
 
-                $conn = new mysqli($localhost, $root," ", $Userdb);
+                $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
+
 
                 // Check for database connection errors
                 if ($conn->connect_error) {
@@ -49,7 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Insert user data into the database (you should use prepared statements for security)
                 $sql = "INSERT INTO user (first_name, last_name, password,confirm_password, gender, email, phone, address, profile_picture) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param("ssssssisb", $first_name, $last_name, $password, $hashed_password, $gender, $email, $phone, $address, $target_file);
+                $stmt->bind_param("sssssssss", $first_name, $last_name, $password, $confirm_password, $gender, $email, $phone, $address, $target_file);
+
 
                 if ($stmt->execute()) {
                     echo "Registration successful!";
